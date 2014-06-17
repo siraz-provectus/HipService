@@ -1,0 +1,10 @@
+li.b-task{id='task_#{task.id}'}
+	- if task.status == 'pending' && task.end_date > Time.now()
+		= check_box_tag 'accept', task.id
+	label.pull-righg.task_label
+		- if task.status == 'done'
+			s.disabled = "#{task.description}  -  задача выполнено #{task.updated_at.strftime('%d %B %Y')}"
+		- elsif task.end_date < Time.now()
+			.expired = "#{task.description}  -  задача не выполнена до #{task.end_date.strftime('%d %B %Y')}"
+		- else
+			= "#{task.description}  -  задача заканчивается #{task.end_date.strftime('%d %B %Y')}"

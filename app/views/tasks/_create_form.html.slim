@@ -1,0 +1,11 @@
+#task_form
+	= form_tag tasks_url, remote: true, method: :post do
+		.col-md-3
+		  = hidden_field_tag "task[user_id]", current_user.id
+		  = label_tag "Новая задача"
+		  br
+		  = text_area_tag 'task[description]',nil, class: 'pull-left date_range'
+	    = label_tag 'Время окончания'
+	    br
+	    = text_field_tag 'task[end_date]', nil, id: 'datepicker'
+		= submit_tag "Save", class: 'btn btn-primary save_task'

@@ -1,0 +1,11 @@
+.row.bottom20
+	= render 'create_form'
+.clearfix
+.row
+	.col-md-6
+		ul#b-feeds__container.tasks
+			= render tasks
+
+= content_for(:javascript_code) do
+  | DatePicker.init();
+  | TaskStatus.change();

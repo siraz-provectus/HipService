@@ -1,0 +1,5 @@
+<% if  task.errors.blank? %>
+	$("#task_<%= task.id %>").replaceWith("<%= escape_javascript(render(
+      'task', task: task
+    )) %>");
+<% end %>

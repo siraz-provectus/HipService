@@ -1,0 +1,10 @@
+<% if  @task.errors.blank? %>
+	$('.tasks').prepend("<%= escape_javascript(render(
+      'task', task: @task
+    )) %>");
+	$('textarea').val('');
+	$('#datepicker').val('');
+<% else %>
+	$('#notice').html("<%= escape_javascript(render('layout_components/flash_messages')) %>");
+	<% flash[:error] = nil %>
+<% end %>

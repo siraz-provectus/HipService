@@ -1,0 +1,22 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: service_development
+  pool: 5
+  username: glowfori
+  password: glowforipass
+  port: 5432
+  host: localhost
+  min_messages: WARNING
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: service_test
+  pool: 5
+  username: glowfori
+  password: glowforipass
+  port: 5432
+  host: localhost
+  min_messages: WARNING
+
