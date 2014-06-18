@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
@@ -24,6 +25,8 @@ group :assets do
 
   gem 'uglifier', '>= 1.3.0'
 end
+
+gem 'rails_12factor', group: :production
 
 group :test do
   gem 'cucumber-rails', require: false
